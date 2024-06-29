@@ -11,3 +11,22 @@
 # 회사에는 동명이인이 없으며, 대소문자가 다른 경우에는 다른 이름이다. 
 # 사람들의 이름은 알파벳 대소문자로 구성된 5글자 이하의 문자열이다.
 
+n = int(input())
+L = []
+for i in range(n):
+    temp = list(map(str, input().split()))
+    L.append(temp)
+for i in L:
+    if 'leave' in i:
+        temp = i[0]
+        for j in L:
+            if temp in j:
+                L.remove(j)
+companyList = []
+for i in L:
+    companyList.append(i[0])
+companyList.sort()
+companyList.reverse()
+for i in companyList:
+    print(i)
+
