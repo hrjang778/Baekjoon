@@ -7,3 +7,12 @@
 # 입력으로 주어지는 문자열은 알파벳 소문자로만 이루어져 있으며, 길이는 500을 넘지 않는다. 
 # 집합 S에 같은 문자열이 여러 번 주어지는 경우는 없다.
 
+S =[]
+cnt = 0
+N,M = map(int,input().split())
+for i in range(N):
+    S.append(input())
+for i in range(M):
+    if input() in S:
+        cnt += 1
+print(cnt)
