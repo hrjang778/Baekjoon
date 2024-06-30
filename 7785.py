@@ -29,4 +29,3 @@ companyList.sort()
 companyList.reverse()
 for i in companyList:
     print(i)
-
