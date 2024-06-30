@@ -12,18 +12,15 @@
 # 사람들의 이름은 알파벳 대소문자로 구성된 5글자 이하의 문자열이다.
 import sys
 n = int(sys.stdin.readline())
-nameL = []
-leaveL = []
 L = {}
-for i in range(n):
+for _ in range(n):
     name, leave = map(str, sys.stdin.readline().split())
-    if leave != "leave":
-        nameL.append(name)
-        leaveL.append(leave)
-    if leave == "leave":
-        nameL.remove(name)
+    if leave == "enter":
+        L[name] = leave
+    else:
+        del L[name]
         
-nameL.sort(reverse=True)
-for i in nameL:
+        
+L = sorted(L.keys(),reverse=True)
+for i in L:
     print(i)
-
