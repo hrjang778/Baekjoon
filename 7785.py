@@ -10,22 +10,20 @@
 # "enter"인 경우는 출근, "leave"인 경우는 퇴근이다.
 # 회사에는 동명이인이 없으며, 대소문자가 다른 경우에는 다른 이름이다. 
 # 사람들의 이름은 알파벳 대소문자로 구성된 5글자 이하의 문자열이다.
-
-n = int(input())
-L = []
+import sys
+n = int(sys.stdin.readline())
+nameL = []
+leaveL = []
+L = {}
 for i in range(n):
-    temp = list(map(str, input().split()))
-    L.append(temp)
-for i in L:
-    if 'leave' in i:
-        temp = i[0]
-        for j in L:
-            if temp in j:
-                L.remove(j)
-companyList = []
-for i in L:
-    companyList.append(i[0])
-companyList.sort()
-companyList.reverse()
-for i in companyList:
+    name, leave = map(str, sys.stdin.readline().split())
+    if leave != "leave":
+        nameL.append(name)
+        leaveL.append(leave)
+    if leave == "leave":
+        nameL.remove(name)
+        
+nameL.sort(reverse=True)
+for i in nameL:
     print(i)
+
