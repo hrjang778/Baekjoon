@@ -1,15 +1,16 @@
 import sys
-print(type(2))
-N,M = map(int,sys.stdin.readline().split())
+input = sys.stdin.readline
+N,M = map(int,input().split())
 poket = {}
+poketIndex = {}
 for i in range(N):
-    name = sys.stdin.readline().strip()
+    name = input().strip()
     poket[name] = str(i+1)
+    poketIndex[str(i+1)] = name
+
 for i in range(M):
-    ask = sys.stdin.readline().strip()
-    try:
+    ask = input().strip()
+    if ask in poket:
         print(poket[ask])
-    except:
-        for key, value in poket.items():
-            if value == ask:
-                print(key)
+    else:
+        print(poketIndex[ask])
