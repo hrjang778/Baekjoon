@@ -14,3 +14,18 @@ for i in duplication:
 
 # in 함수는 set함수를 사용하게 될때 해시테이블을 이용하므로 O(1) 시간 복잡도를 가진다
 # in 함수는 list에서 O(N)을 가짐
+
+
+# 어떤 고수의 코드
+# from itertools import tee
+# from sys import stdin, stdout
+
+# def pairwise(it):
+#     a, b = tee(it)
+#     next(b, None)
+#     return zip(a, b)
+
+# arr = sorted(stdin.buffer.read().split()[2:])
+# arr = [a for a, b in pairwise(arr) if a == b]
+# stdout.buffer.write(b'%d\n' % len(arr))
+# stdout.buffer.write(b'\n'.join(arr))
