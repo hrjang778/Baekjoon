@@ -11,3 +11,6 @@ duplication.sort()
 print(len(duplication))
 for i in duplication:
     print(i)
+
+# in 함수는 set함수를 사용하게 될때 해시테이블을 이용하므로 O(1) 시간 복잡도를 가진다
+# in 함수는 list에서 O(N)을 가짐
